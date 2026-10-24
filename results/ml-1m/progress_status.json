@@ -1,0 +1,238 @@
+{
+  "topic": "K01",
+  "checked_at": "2026-10-16T18:09:46",
+  "data_ready": {
+    "ml-1m": false
+  },
+  "core": {
+    "ok": true,
+    "version": "1.4 (2026-10-16): 3 seed 42, 0, 1 cho mọi đề tài; dừng sớm 1000/10/10",
+    "changed": [],
+    "topic_config_changed": []
+  },
+  "runs": {},
+  "results_files": [],
+  "tests": [
+    {
+      "test": "test_tc1_tree_matches_appendix",
+      "file": "tests/test_contract_K01.py",
+      "kind": "hợp đồng",
+      "description": "TC1: 18 lá MovieLens (bỏ unknown), 5 cha, mỗi lá thuộc đúng một cha; tên lá đúng chuỗi trong u.genre",
+      "status": "CHƯA LÀM",
+      "message": "CHƯA LÀM: parent_membership"
+    },
+    {
+      "test": "test_tc2_parent_prototype_is_direct_mean_of_children",
+      "file": "tests/test_contract_K01.py",
+      "kind": "hợp đồng",
+      "description": "TC2: phim có hai lá cùng cha chỉ góp một lần; prototype cha = trung bình trực tiếp phim con phân biệt",
+      "status": "CHƯA LÀM",
+      "message": "CHƯA LÀM: parent_membership"
+    },
+    {
+      "test": "test_tc2b_two_level_vectors",
+      "file": "tests/test_contract_K01.py",
+      "kind": "hợp đồng",
+      "description": "TC2b: vector hỗn hợp = cân thang G2 của 0,5 lá + 0,5 cha; phim không nhãn quay về CF",
+      "status": "CHƯA LÀM",
+      "message": "CHƯA LÀM: two_level_vectors"
+    },
+    {
+      "test": "test_tc3_coverage_and_no_single_root",
+      "file": "tests/test_contract_K01.py",
+      "kind": "hợp đồng",
+      "description": "TC3: có bảng độ phủ (số phim mất nhãn, số node mỗi cấp), không dùng gốc duy nhất; có kết quả 2 seed",
+      "status": "CHƯA LÀM",
+      "message": "CHƯA CÓ KẾT QUẢ: results/K01_tree_coverage.csv"
+    },
+    {
+      "test": "test_exploratory_flag",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "Nhóm dưới 30 user hoặc dưới 100 đích được gắn nhãn thăm dò",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_group_excludes_users_without_targets",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "User không có đích trong nhóm không tham gia trung bình của nhóm",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_masked_items_never_ranked",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "Phim đã thấy (bị loại) không bao giờ lọt vào top-K, kể cả khi điểm cao nhất",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_negative_catalog_policy",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "Mẫu âm: mặc định chỉ lấy từ danh mục train; negative_catalog = all lấy từ toàn bộ danh mục",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_page9_hand_example",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "Ví dụ tự kiểm tra trang 9: Recall@3 = 1, NDCG@3 ≈ 0,6934, NDCG nhóm ≈ 0,6309",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_selection_group",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "Chọn checkpoint theo selection_group; mặc định là overall",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_split_exclusions_and_train_catalog_policy",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "Split C1: validation không xếp hạng cold-test, test không xếp hạng cold-validation; train_catalog bỏ phim cold",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_split_without_exclusion_file_is_unchanged",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "Split G1 (không có candidate_exclusions.json): chỉ loại dương train/validation như cũ",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_tie_break_is_fixed_permutation",
+      "file": "tests/test_core_evaluation.py",
+      "kind": "lõi",
+      "description": "Khi bằng điểm, thứ tự theo hoán vị cố định, giống nhau giữa các lần chạy",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_core_files_unchanged",
+      "file": "tests/test_core_intact.py",
+      "kind": "lõi",
+      "description": "Các tệp lõi chung giữ nguyên như bản GV phát hành",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_lightgcn_graph_uses_train_only",
+      "file": "tests/test_core_models.py",
+      "kind": "lõi",
+      "description": "Đồ thị LightGCN chỉ có cạnh của train (số cạnh = 2 x số tương tác train)",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_model_scores_are_dot_products[BPRMF]",
+      "file": "tests/test_core_models.py",
+      "kind": "lõi",
+      "description": "Điểm chấm = tích vô hướng vector user và vector phim; hàm mất mát trả về [BPR, phạt L2] hữu hạn",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_model_scores_are_dot_products[LightGCN]",
+      "file": "tests/test_core_models.py",
+      "kind": "lõi",
+      "description": "Điểm chấm = tích vô hướng vector user và vector phim; hàm mất mát trả về [BPR, phạt L2] hữu hạn",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_label_weights_sum_to_one",
+      "file": "tests/test_core_prototype.py",
+      "kind": "lõi",
+      "description": "Tổng trọng số trên các nhãn hợp lệ bằng 1; phim không nhãn có trọng số 0",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_mix_endpoints",
+      "file": "tests/test_core_prototype.py",
+      "kind": "lõi",
+      "description": "g = 1 khôi phục điểm CF; g = 0 chỉ còn điểm prototype",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_prototype_is_mean_of_train_items",
+      "file": "tests/test_core_prototype.py",
+      "kind": "lõi",
+      "description": "Prototype = trung bình vector các phim train thuộc thể loại, mỗi phim góp một lần",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_scaling_and_fallback",
+      "file": "tests/test_core_prototype.py",
+      "kind": "lõi",
+      "description": "Vector taxonomy có độ lớn = trung vị độ lớn phim train; phim không nhãn quay về CF",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_catalog_only_train_items",
+      "file": "tests/test_core_split.py",
+      "kind": "lõi",
+      "description": "Danh mục chỉ gồm phim có tương tác train; đích ngoài danh mục bị tách và đếm",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_deduplicate_keeps_latest",
+      "file": "tests/test_core_split.py",
+      "kind": "lõi",
+      "description": "Khử trùng cặp user–phim, giữ bản ghi muộn nhất",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_iterative_kcore_users_and_items",
+      "file": "tests/test_core_split.py",
+      "kind": "lõi",
+      "description": "5-core lặp: mọi user và mọi phim còn lại có >= 5 tương tác",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_prepared_split_is_leak_free",
+      "file": "tests/test_core_split.py",
+      "kind": "lõi",
+      "description": "Split G1 đã dựng: train/validation/test rời nhau và mọi đích nằm trong danh mục train",
+      "status": "CHƯA LÀM",
+      "message": "CHƯA LÀM: chưa chạy python -m tools.data.prepare"
+    },
+    {
+      "test": "test_split_ratios",
+      "file": "tests/test_core_split.py",
+      "kind": "lõi",
+      "description": "round(0,7n) train, round(0,1n) validation (làm tròn ngân hàng như TaxPro-CL), còn lại test",
+      "status": "ĐẠT",
+      "message": ""
+    },
+    {
+      "test": "test_split_rules_and_determinism",
+      "file": "tests/test_core_split.py",
+      "kind": "lõi",
+      "description": "Rating >= 4, 5-core user và phim, ba tập rời nhau, cùng seed cho cùng kết quả",
+      "status": "ĐẠT",
+      "message": ""
+    }
+  ],
+  "summary": {
+    "hợp đồng CHƯA LÀM": 4,
+    "lõi CHƯA LÀM": 1,
+    "lõi ĐẠT": 22
+  }
+}

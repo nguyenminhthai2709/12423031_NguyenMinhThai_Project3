@@ -1,0 +1,55 @@
+{
+  "description": "Cây thể loại MovieLens QUY ƯỚC (bộ đề, phụ lục trang 55). Không phải cây chính thức của MovieLens, không phải tri thức phân loại do chuyên gia xác nhận; chỉ dùng cho thí nghiệm mô phỏng của K01. Khóa bảng này trước khi xem kết quả; không chuyển nhãn sang cha khác để tăng NDCG test.",
+  "source": "Bộ đề tài BTL Prototype và cổng kết hợp, Phụ lục cây quy ước dự phòng cho K01",
+  "leaf_names_follow": "u.genre (MovieLens 100K); nhãn unknown bị bỏ",
+  "parents": [
+    {
+      "id": "action_adventure",
+      "label": "Hành động và phiêu lưu",
+      "leaves": [
+        "Action",
+        "Adventure",
+        "War",
+        "Western"
+      ]
+    },
+    {
+      "id": "comedy_family",
+      "label": "Hài và gia đình",
+      "leaves": [
+        "Animation",
+        "Children's",
+        "Comedy"
+      ]
+    },
+    {
+      "id": "drama_romance",
+      "label": "Tâm lý và tình cảm",
+      "leaves": [
+        "Drama",
+        "Romance"
+      ]
+    },
+    {
+      "id": "mystery_fantasy",
+      "label": "Bí ẩn và giả tưởng",
+      "leaves": [
+        "Crime",
+        "Fantasy",
+        "Film-Noir",
+        "Horror",
+        "Mystery",
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "id": "music_documentary",
+      "label": "Âm nhạc và tư liệu",
+      "leaves": [
+        "Documentary",
+        "Musical"
+      ]
+    }
+  ]
+}

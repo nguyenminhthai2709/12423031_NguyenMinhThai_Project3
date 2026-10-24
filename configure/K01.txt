@@ -1,0 +1,14 @@
+# K01 – cấu hình thí nghiệm (phương án 1 SV: cây MovieLens quy ước; CF, lá, hỗn hợp; BPR-MF nền; 2 seed)
+dataset = ml-100k
+top_K = [10, 20]
+tiebreak_seed = 12345
+test_batch_size = 1024
+# Số luồng lấy mẫu âm song song (khi đề tài học thêm bằng BPR, ví dụ học cổng)
+num_worker = 4
+seeds = [42, 0, 1]
+base_tag = base
+tree_file = metadata/convention_tree.json
+# g = 0,5 giữ cố định cho mọi biến thể (không chọn g)
+mix_g = 0.5
+# Mở rộng (2 SV): thêm "parent"
+methods = ["CF", "leaf", "mix"]

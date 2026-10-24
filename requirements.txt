@@ -1,0 +1,11 @@
+# Phiên bản tối thiểu; đã kiểm tra với Python 3.10, torch 2.1.0, numpy 1.26.4, scipy 1.11.4,
+# scikit-learn 1.5.2, matplotlib 3.10, pytest 8.3. Trên Google Colab/Kaggle các gói này thường có sẵn.
+torch>=2.0
+numpy>=1.24
+scipy>=1.10
+tqdm>=4.60
+pytest>=7.0
+matplotlib>=3.7
+# Không bắt buộc với lõi; dùng nếu đề tài cần:
+# pandas>=1.5        (thống kê, bảng)
+# scikit-learn>=1.2  (K-means – đề tài T04)

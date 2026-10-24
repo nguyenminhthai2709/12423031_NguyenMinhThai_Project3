@@ -1,0 +1,27 @@
+# Giao thức G1 (bộ đề, trang 8): vector 32 chiều, Adam, tốc độ học khởi đầu 0,001. Lõi 1.3 (theo yêu cầu, áp cho mọi
+# lần huấn luyện có dừng sớm): trần 1000 epoch, kiểm tra validation mỗi 10 epoch, dừng sau 10 lần không cải thiện
+# (bộ đề ghi: trần 100 epoch, mỗi 5 epoch, dừng sau 4 lần);
+# chọn theo NDCG@10 validation toàn bộ.
+# Đây là cấu hình khởi đầu đề xuất, không phải tham số tối ưu đã kiểm chứng.
+# reg_lambda (hệ số phạt L2) chưa được bộ đề cố định; 0,0001 là giá trị khởi đầu thường dùng với LightGCN.
+dataset = ml-100k
+top_K = [10, 20]
+selection_metric = ndcg
+selection_K = 10
+# selection_group = overall cho G1; split C1 (T05) dùng warm_1plus
+selection_group = overall
+# candidate_policy = all cho G1; mô hình nền trên split C1 (T05) dùng train_catalog
+candidate_policy = all
+# negative_catalog = train: lấy mẫu âm trên danh mục train (G1)
+negative_catalog = train
+tiebreak_seed = 12345
+training_epochs = 1000
+interval = 10
+early_stopping = 10
+embedding_size = 32
+learn_rate = 0.001
+reg_lambda = 0.0001
+batch_size = 1024
+test_batch_size = 1024
+# Số luồng lấy mẫu âm song song khi huấn luyện
+num_worker = 4

@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+# Dữ liệu MovieLens không được phân phối lại: không đưa lên kho mã chung
+dataset/*
+!dataset/.gitkeep
+dataset_verify/*
+!dataset_verify/.gitkeep
+preprocessed/*
+!preprocessed/.gitkeep
+metadata/ml-*/
+log/*
+!log/.gitkeep
+*.pt
+*.tmp

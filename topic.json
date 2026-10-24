@@ -1,0 +1,59 @@
+{
+  "code": "K01",
+  "title": "So sánh prototype ở cấp phân loại rộng và hẹp",
+  "level": "Khá",
+  "folder": "K01_NguyenMinhThai",
+  "students": [
+    {
+      "name": "Nguyễn Minh Thái",
+      "id": "12423031",
+      "code": "K01",
+      "role": "SV1"
+    }
+  ],
+  "datasets": [
+    "ml-100k"
+  ],
+  "base_runs": [
+    {
+      "model": "BPRMF",
+      "seeds": [
+        42,
+        0,
+        1
+      ],
+      "tag": "base",
+      "command": "python main.py --model BPRMF --seeds 42 0 1 --tag base"
+    }
+  ],
+  "steps": [
+    "python -m tools.data.prepare",
+    "python main.py --model BPRMF --seeds 42 0 1 --tag base",
+    "python -m tools.experiments.run_K01"
+  ],
+  "results": [
+    "K01_validation.csv",
+    "K01_test.csv",
+    "K01_tree_coverage.csv",
+    "K01_node_support.csv"
+  ],
+  "todo": [
+    {
+      "file": "models/K01_two_level.py",
+      "name": "parent_membership",
+      "owner": "SV1"
+    },
+    {
+      "file": "models/K01_two_level.py",
+      "name": "two_level_vectors",
+      "owner": "SV1"
+    }
+  ],
+  "contract_tests": [
+    "test_tc1_tree_matches_appendix",
+    "test_tc2_parent_prototype_is_direct_mean_of_children",
+    "test_tc2b_two_level_vectors",
+    "test_tc3_coverage_and_no_single_root"
+  ],
+  "core_version": "1.4 (2026-10-16): 3 seed 42, 0, 1 cho mọi đề tài; dừng sớm 1000/10/10"
+}
