@@ -1,7 +1,7 @@
 # BÁO CÁO TIẾN ĐỘ TUẦN 1 – PROJECT 3
 **Đề tài:** K01 – So sánh prototype ở cấp phân loại rộng và hẹp  
 **Sinh viên thực hiện:** Nguyễn Minh Thái (MSSV: 12423031, SV1)  
-**Thời gian thực hiện:** Tuần 1 (24/10/2026)  
+**Thời gian thực hiện:** Tuần 1 (17/10/2026)  
 **Môi trường:** Windows 11, PowerShell, Python 3.13.5  
 
 ---
